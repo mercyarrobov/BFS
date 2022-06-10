@@ -54,9 +54,8 @@ class Grafo:
           
             # Lista de adyacencia usando diccionario
             self.m_list_ady = {nodo: set() for nodo in self.m_nodos}
-        except Exception as e:
-            print(e)
-            
+        except KeyError as e:
+            print(e)        
 
     def agregar_aristas(self, nodo1, nodo2, peso=1):
         """
@@ -150,13 +149,30 @@ if __name__ == "__main__":
     g.agregar_aristas(12, 15, 2)
     
     
+    opcion = '0'
+    while not(opcion=='6'):
+        print(' 1. Ver el grafo')
+        print(' 2. Ver el recorrido')
+        print(' 3. Salir')
 
-   # Imprime las lista de adyacencia del nodo con su nodo y peso
-    g.imprimir_lista_de_adj()
-
-    # Imprime un mensaje sobre la siguiente ejecución
-    print("Lo siguiente es la primera travesía de ancho" " (empezando por el vértice 0)")
-    # Imprime la primera travesía
-    g.bfs_traversal(0)
+        opcion=input('  --- ¿Cuál opcion?: ')
+    
+        if (opcion=='1'):
+            print(' **** menu opcion 01 ****')
+            # Imprime las lista de adyacencia del nodo con su nodo y peso
+            g.imprimir_lista_de_adj()
+        
+        elif (opcion=='2'):
+            print(' **** menu opcion 02 ****')
+            # Imprime un mensaje sobre la siguiente ejecución
+            print("Lo siguiente es la primera travesía de ancho" " (empezando por el vértice 0)")
+            # Imprime la primera travesía
+            g.bfs_traversal(0)
+                
+        elif (opcion=='3'):
+            print(' **** Saliendo del menu  ****')
+        else:
+            print('No existe la opcion')
+        break
 
     #print(Grafo.__doc__)
