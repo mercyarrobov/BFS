@@ -124,8 +124,25 @@ if __name__ == "__main__":
     g = Grafo(5, directo=False)
 
 # Agregar al grafo las aristas con un peso
-    #Agrega la arista (0,1) con peso 1
-    g.agregar_aristas(0, 1)
+    # Agrega la arista (0,1) con peso 1
+    g.agregar_aristas(0, 1, 1)
+    g.agregar_aristas(1, 3, 2)
+    g.agregar_aristas(1, 2, 1)
+    g.agregar_aristas(3, 4, 0.5)
+    g.agregar_aristas(2, 5, 2)
+    g.agregar_aristas(4, 6, 0.5)
+    g.agregar_aristas(6, 7, 2)
+    g.agregar_aristas(6, 8, 2)
+    g.agregar_aristas(5, 9, 2)
+    g.agregar_aristas(7, 10, 3)
+    g.agregar_aristas(7, 11, 3)
+    g.agregar_aristas(9, 12, 3)
+    g.agregar_aristas(5, 13, 3)
+    g.agregar_aristas(10, 14, 2)
+    g.agregar_aristas(12, 15, 2)
+    
+    
+
 
    #Imprime las lista de adyacencia del nodo con su nodo y peso
     g.imprimir_lista_de_adj()
