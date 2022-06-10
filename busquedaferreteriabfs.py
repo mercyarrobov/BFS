@@ -70,22 +70,27 @@ class Grafo:
             peso del nodo
 
         """
-        
-        # Añade la arista del nodo1 al nodo2"""
-        self.m_list_ady[nodo1].add((nodo2, peso))
+        try:
+            # Añade la arista del nodo1 al nodo2"""
+            self.m_list_ady[nodo1].add((nodo2, peso))
 
-        # Si un grafo es no dirigido, añade la misma arista
-        if not self.m_directo:
+            # Si un grafo es no dirigido, añade la misma arista
+            if not self.m_directo:
             # Pero también en la dirección opuesta
-            self.m_list_ady[nodo2].add((nodo1, peso))
+                self.m_list_ady[nodo2].add((nodo1, peso))
+        except KeyError as e:
+            print (e)
 
     def imprimir_lista_de_adj(self):
         """ Función que imprimir la representación del grafo
         """
-        # Agrega clave y recorre las listas adyacentes
-        for clave in self.m_list_ady.keys():
+        try:
+            # Agrega clave y recorre las listas adyacentes
+            for clave in self.m_list_ady.keys():
             # Imprimi la lista de nodos con su clave
-            print("nodo", clave, ": ", self.m_list_ady[clave])
+                print("nodo", clave, ": ", self.m_list_ady[clave])
+        except KeyError as e:
+            print(e)
 
     def bfs_traversal(self, nodo_inicial):
         """
